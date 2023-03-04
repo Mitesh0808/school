@@ -1,0 +1,91 @@
+//make serate school for school name &
+
+//neasted school & faculty(only in student)
+
+            //courses
+//getallcourse need get course & neasted  school
+//getonecourse need only get course & neasted school
+//createcourse need only get course
+//updatecourse need only get course
+//deletcourse doesn`t need schema or defination 
+            //faculty
+//getallfaculty need get course & neasted  school
+//getonefaculty need only get course & neasted school
+//createcourse need only get course
+//updatecourse need only get course
+//deletcourse doesn`t need schema or defination 
+
+
+
+
+
+//schema need 
+//neasted
+//fractionofschool
+//fractionoffaculty
+//course
+//getallcourse
+//create-updatecourse
+//faculty
+//getallfaculty
+//create-updatecourse
+
+
+
+
+
+
+{
+  "SuperAdmin": {
+    "type": "object",
+    "properties": {
+      "_id": {
+        "type": "string",
+        "description": "The unique identifier of the super admin."
+      },
+      "email": {
+        "type": "string",
+        "description": "The email address of the super admin."
+      },
+      "password": {
+        "type": "string",
+        "description": "The password of the super admin."
+      },
+      "createdAt": {
+        "type": "string",
+        "description": "The date and time the super admin was created."
+      },
+      "updatedAt": {
+        "type": "string",
+        "description": "The date and time the super admin was last updated."
+      }
+    }
+  },
+  "UpdateSuperAdmin": {
+    "type": "object",
+    "properties": {
+      "email": {
+        "type": "string",
+        "description": "The email address of the super admin."
+      },
+      "password": {
+        "type": "string",
+        "description": "The password of the super admin."
+      }
+    }
+  },
+  "NewSuperAdmin": {
+    "type": "object",
+    "properties": {
+      "email": {
+        "type": "string",
+        "description": "The email address of the super admin."
+      },
+      "password": {
+        "type": "string",
+        "description": "The password of the super admin."
+      }
+    },
+    "required": ["email", "password"]
+  }
+}

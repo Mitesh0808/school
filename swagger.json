@@ -1,0 +1,2105 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "CMS ",
+        "description": "CMS API",
+        "license": {
+            "name": "MIT",
+            "url": "https://spdx.org/licenses/MIT.html"
+        }
+    },
+    "host": "localhost:5000",    
+    "basePath": "/",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths":{
+        "/course": {
+            "get": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "Get all Courses ",
+                "description": "Get all Courses ",
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/getAllCourses"
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "tags":["Courses"],
+                "summary":"create Courses",
+                "parameters": [
+                    {
+                        "name": "Courses",
+                        "in": "body",
+                        "required": true,
+                        "description": "Courses that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewCourses"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllCourses"
+                        }
+                    }
+                }
+            }
+        }, 
+        "/course/{id}":{
+            "get": {
+                "tags": [
+                    "Courses"
+                ],
+                "summary": "get Course by ID ",
+                "description": "get Course by ID ",
+                "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of pet to fetch",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/getAllCourses"
+                        }
+                    }
+                }
+            },"patch":{
+                "tags":["Courses"],
+                "summary":"create Courses",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of pet to fetch",
+                        "required": true,
+                        "type": "string"
+                      },
+                    {
+                        "name": "Courses",
+                        "in": "body",
+                        "description": "Courses that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewCourses"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllCourses"
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "tags":["Courses"],
+                "summary":"delete Courses",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of pet to fetch",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                        "description": "201 deleted"
+                    }
+                }
+            }
+        },
+        "/course/disable/{id}": {
+            "put": {
+                "tags": [
+                    "Courses"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of Courses to disable",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "summary": "disable Courses",
+                "description": "disable Courses",
+                "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+         
+        },
+        "/faculty": {
+            "get": {
+                "tags": [
+                    "faculty"
+                ],
+                "summary": "Get all faculty ",
+                "description": "Get all faculty ",
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/getAllFaculty"
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "tags":["faculty"],
+                "summary":"create faculty",
+                "parameters": [
+                    {
+                        "name": "faculty",
+                        "in": "body",
+                        "required": true,
+                        "description": "faculty that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewFaculty"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllFaculty"
+                        }
+                    }
+                }
+            }
+        }, 
+        "/faculty/{id}":{
+            "get": {
+                "tags": [
+                    "faculty"
+                ],
+                "summary": "get faculty by ID ",
+                "description": "get faculty by ID ",
+                "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of faculty to fetch",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/getAllFaculty"
+                        }
+                    }
+                }
+            },
+            "patch":{
+                "tags":["faculty"],
+                "summary":"create faculty",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of faculty to fetch",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "200 all faculty currently active & with provided ID",
+                        "schema": {
+                            "$ref": "#/definitions/getAllFaculty"
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "tags":["faculty"],
+                "summary":"delete faculty",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of faculty to fetch",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                        "description": "201 deleted"
+                    }
+                }
+            }
+        },
+        "/faculty/login":{
+            "post":{
+                "tags":["faculty"],
+                "summary":"login faculty",
+                "parameters": [
+                    {
+                        "name": "faculty",
+                        "in": "body",
+                        "required": true,
+                        "description": "faculty that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllFaculty"
+                        }
+                    }
+                }
+            }
+        },
+        "/faculty/schoolId/{id}": {
+            "get": {
+                "tags": [
+                    "faculty"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of faculty to fetch",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "summary": "Get faculty who is active & with schoolID",
+                "description": "Get all faculty ",
+                "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/getAllFaculty"
+                        }
+                    }
+                }
+            }
+         
+        },
+        "/faculty/disable/{id}": {
+            "put": {
+                "tags": [
+                    "faculty"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of faculty to disable",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "summary": "disable faculty",
+                "description": "disable faculty",
+                "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+         
+        },
+        "/finance": {
+            "get": {
+                "tags": [
+                    "finance"
+                ],
+                "summary": "Get all finance ",
+                "description": "Get all finance ",
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/getAllFinance"
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "tags":["finance"],
+                "summary":"create finance",
+                "parameters": [
+                    {
+                        "name": "finance",
+                        "in": "body",
+                        "required": true,
+                        "description": "finance that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewFinance"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllFinance"
+                        }
+                    }
+                }
+            }
+        },
+        "/finance/{id}":{
+            "get": {
+                "tags": [
+                    "finance"
+                ],
+                "summary": "get finance by ID ",
+                "description": "get finance by ID ",
+                "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of finance to fetch",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/getAllFinance"
+                        }
+                    }
+                }
+            },"patch":{
+                "tags":["finance"],
+                "summary":"create finance",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of finance to fetch",
+                        "required": true,
+                        "type": "string"
+                      },
+                    {
+                        "name": "faculty",
+                        "in": "body",
+                        "description": "finance that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewFinance"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllFinance"
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "tags":["finance"],
+                "summary":"delete finance",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of finance to fetch",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "201 deleted"
+                    }
+                }
+            }
+        },
+        "/finance/login":{
+            "post":{
+                "tags":["finance"],
+                "summary":"login finance",
+                "parameters": [
+                    {
+                        "name": "finance",
+                        "in": "body",
+                        "required": true,
+                        "description": "finance that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "200 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllFaculty"
+                        }
+                    }
+                }
+            }
+        },
+        "/finance/disable/{id}": {
+            "put": {
+                "tags": [
+                    "finance"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of finance to disable",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "summary": "disable finance",
+                "description": "disable finance",
+                "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        
+        "/inquiry": {
+            "get": {
+                "tags": [
+                    "inquiry"
+                ],
+                "summary": "Get all inquiry ",
+                "description": "Get all inquiry ",
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/getAllInquiry"
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "tags":["inquiry"],
+                "summary":"create inquiry",
+                "parameters": [
+                    {
+                        "name": "inquiry",
+                        "in": "body",
+                        "required": true,
+                        "description": "inquiry that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewInquiry"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllInquiry"
+                        }
+                    }
+                }
+            }
+        }, 
+        "/inquiry/{id}":{
+            "get": {
+                "tags": [
+                    "inquiry"
+                ],
+                "summary": "get inquiry by ID ",
+                "description": "get inquiry by ID ",
+                "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of inquiry to fetch",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/getAllInquiry"
+                        }
+                    }
+                }
+            },"patch":{
+                "tags":["inquiry"],
+                "summary":"create inquiry",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of inquiry to fetch",
+                        "required": true,
+                        "type": "string"
+                      },
+                    {
+                        "name": "inquiry",
+                        "in": "body",
+                        "description": "inquiry that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewInquiry"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllInquiry"
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "tags":["inquiry"],
+                "summary":"delete inquiry",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of inquiry to fetch",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "201 deleted"
+                    }
+                }
+            }
+        },
+        "/inquiry/disable/{id}": {
+            "put": {
+                "tags": [
+                    "inquiry"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of inquiry to disable",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "summary": "disable inquiry",
+                "description": "disable inquiry",
+                "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/marketing": {
+            "get": {
+                "tags": [
+                    "marketing"
+                ],
+                "summary": "Get all marketing ",
+                "description": "Get all marketing ",
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/getAllMarketing"
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "tags":["marketing"],
+                "summary":"create marketing",
+                "parameters": [
+                    {
+                        "name": "marketing",
+                        "in": "body",
+                        "required": true,
+                        "description": "marketing that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewMarketing"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllMarketing"
+                        }
+                    }
+                }
+            }
+        },
+        "/marketing/{id}":{
+            "get": {
+                "tags": [
+                    "marketing"
+                ],
+                "summary": "get marketing by ID ",
+                "description": "get marketing by ID ",
+                "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of marketing to fetch",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/getAllMarketing"
+                        }
+                    }
+                }
+            },"patch":{
+                "tags":["marketing"],
+                "summary":"create marketing",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of marketing to fetch",
+                        "required": true,
+                        "type": "string"
+                      },
+                    {
+                        "name": "marketing",
+                        "in": "body",
+                        "description": "marketing that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewMarketing"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllMarketing"
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "tags":["marketing"],
+                "summary":"delete marketing",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of marketing to fetch",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "201 deleted"
+                    }
+                }
+            }
+        },
+        "/marketing/login":{
+            "post":{
+                "tags":["marketing"],
+                "summary":"login marketing",
+                "parameters": [
+                    {
+                        "name": "marketing",
+                        "in": "body",
+                        "required": true,
+                        "description": "marketing that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "200 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllFaculty"
+                        }
+                    }
+                }
+            }
+        },
+        "/marketing/disable/{id}": {
+            "put": {
+                "tags": [
+                    "marketing"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of marketing to disable",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "summary": "marketing inquiry",
+                "description": "marketing inquiry",
+                "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/school": {
+            "get": {
+                "tags": [
+                    "school"
+                ],
+                "summary": "Get all school ",
+                "description": "Get all school ",
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/getAllSchool"
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "tags":["school"],
+                "summary":"create school",
+                "parameters": [
+                    {
+                        "name": "school",
+                        "in": "body",
+                        "required": true,
+                        "description": "school that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewSchool"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllSchool"
+                        }
+                    }
+                }
+            }
+        },
+        "/school/{id}":{
+            "get": {
+                "tags": [
+                    "school"
+                ],
+                "summary": "get school by ID ",
+                "description": "get school by ID ",
+                "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of school to fetch",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/getAllSchool"
+                        }
+                    }
+                }
+            },"patch":{
+                "tags":["school"],
+                "summary":"create school",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of school to fetch",
+                        "required": true,
+                        "type": "string"
+                      },
+                    {
+                        "name": "school",
+                        "in": "body",
+                        "description": "school that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewSchool"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllSchool"
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "tags":["school"],
+                "summary":"delete school",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of school to fetch",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "201 deleted"
+                    }
+                }
+            }
+        },
+        "/school/login": {
+            "post": {
+                "tags": [
+                    "School"
+                ],
+                "summary": "Authenticate a Super Admin",
+                "description": "Authenticate a Super Admin by email and password",
+                "parameters": [
+                    {
+                        "name": "finance",
+                        "in": "body",
+                        "required": true,
+                        "description": "finance that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful login",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/definitions/LoginResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request: Invalid request body format"
+                    },
+                    "401": {
+                        "description": "Unauthorized: Invalid email or password"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/school/logout": {
+            "post": {
+                "tags": [
+                    "School"
+                ],
+                "summary": "Logout a Super Admin",
+                "description": "Clears the access token and refresh token cookies for the logged in Super Admin",
+                "responses": {
+                    "200": {
+                        "description": "Successful logout"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },"/school/alllogout": {
+            "post": {
+                "tags": [
+                    "School"
+                ],
+                "summary": "Logout a Super Admin",
+                "description": "Clears the access token and refresh token cookies for the logged in Super Admin",
+                "responses": {
+                    "200": {
+                        "description": "Successful logout"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/school/disable/{id}": {
+            "put": {
+                "tags": [
+                    "school"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of school to disable",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "summary": "school inquiry",
+                "description": "school inquiry",
+                "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/seminar": {
+            "get": {
+                "tags": [
+                    "seminar"
+                ],
+                "summary": "Get all seminar ",
+                "description": "Get all seminar ",
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/getAllSeminar"
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "tags":["seminar"],
+                "summary":"create seminar",
+                "parameters": [
+                    {
+                        "name": "seminar",
+                        "in": "body",
+                        "required": true,
+                        "description": "seminar that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewSeminar"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllSeminar"
+                        }
+                    }
+                }
+            }
+        },
+         "/seminar/{id}":{
+            "get": {
+                "tags": [
+                    "seminar"
+                ],
+                "summary": "get seminar by ID ",
+                "description": "get seminar by ID ",
+                "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of seminar to fetch",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/getAllSeminar"
+                        }
+                    }
+                }
+            },"patch":{
+                "tags":["seminar"],
+                "summary":"create seminar",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of school to fetch",
+                        "required": true,
+                        "type": "string"
+                      },
+                    {
+                        "name": "seminar",
+                        "in": "body",
+                        "description": "seminar that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewSeminar"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllSeminar"
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "tags":["seminar"],
+                "summary":"delete seminar",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of school to fetch",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "201 deleted"
+                    }
+                }
+            }
+        },
+        "/seminar/disable/{id}": {
+            "put": {
+                "tags": [
+                    "seminar"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of seminar to disable",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "summary": "seminar inquiry",
+                "description": "seminar inquiry",
+                "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/student": {
+            "get": {
+                "tags": [
+                    "student"
+                ],
+                "summary": "Get all student ",
+                "description": "Get all student ",
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/getAllStudent"
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "tags":["student"],
+                "summary":"create student",
+                "parameters": [
+                    {
+                        "name": "student",
+                        "in": "body",
+                        "required": true,
+                        "description": "student that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewStudent"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllStudent"
+                        }
+                    }
+                }
+            }
+        },
+         "/student/{id}":{
+            "get": {
+                "tags": [
+                    "student"
+                ],
+                "summary": "get student by ID ",
+                "description": "get student by ID ",
+                "produces": [
+                    "application/json"
+                  ],
+                  "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of student to fetch",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/getAllStudent"
+                        }
+                    }
+                }
+            },"patch":{
+                "tags":["student"],
+                "summary":"create student",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of school to fetch",
+                        "required": true,
+                        "type": "string"
+                      },
+                    {
+                        "name": "student",
+                        "in": "body",
+                        "description": "student that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/create-updateNewStudent"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "201": {
+                        "description": "201 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllStudent"
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "tags":["student"],
+                "summary":"delete student",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of student to fetch",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "201 deleted"
+                    }
+                }
+            }
+        },
+        "/student/login":{
+            "post":{
+                "tags":["student"],
+                "summary":"login student",
+                "parameters": [
+                    {
+                        "name": "student",
+                        "in": "body",
+                        "required": true,
+                        "description": "student that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                  ],
+                "responses": {
+                    "200": {
+                        "description": "200 Created",
+                        "schema": {
+                            "$ref": "#/definitions/getAllFaculty"
+                        }
+                    }
+                }
+            }
+        },
+        "/student/disable/{id}": {
+            "put": {
+                "tags": [
+                    "student"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of student to disable",
+                        "required": true,
+                        "type": "string"
+                      }
+                ],
+                "summary": "student inquiry",
+                "description": "student inquiry",
+                "produces": [
+                    "application/json"
+                  ],
+                  "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/superadmin": {
+            "get": {
+              "tags": ["SuperAdmin"],
+              "summary": "Get all SuperAdmin",
+              "responses": {
+                "200": {
+                  "description": "Returns an array of all SuperAdmin",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/SuperAdmin"
+                    }
+                  }
+                },
+                "400": {
+                  "description": "Error occurred while fetching all SuperAdmin"
+                }
+              }
+            },
+            "post": {
+              "tags": ["SuperAdmin"],
+              "summary": "Create a new SuperAdmin",
+              "parameters": [
+                {
+                  "name": "body",
+                  "in": "body",
+                  "description": "SuperAdmin object that needs to be created",
+                  "required": true,
+                  "schema": {
+                    "$ref": "#/definitions/NewSuperAdmin"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Returns the created SuperAdmin",
+                  "schema": {
+                    "$ref": "#/definitions/SuperAdmin"
+                  }
+                },
+                "400": {
+                  "description": "Error occurred while creating SuperAdmin"
+                }
+              }
+            }
+          },
+          "/superadmin/{id}": {
+            "get": {
+              "tags": ["SuperAdmin"],
+              "summary": "Get a SuperAdmin by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "ID of the SuperAdmin to fetch",
+                  "required": true,
+                  "type": "string"
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Returns the SuperAdmin object",
+                  "schema": {
+                    "$ref": "#/definitions/SuperAdmin"
+                  }
+                },
+                "400": {
+                  "description": "Error occurred while fetching SuperAdmin"
+                }
+              }
+            },
+            "put": {
+              "tags": ["SuperAdmin"],
+              "summary": "Update a SuperAdmin by ID",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "ID of the SuperAdmin to update",
+                  "required": true,
+                  "type": "string"
+                },
+                {
+                  "name": "body",
+                  "in": "body",
+                  "description": "SuperAdmin object that needs to be updated",
+                  "required": true,
+                  "schema": {
+                    "$ref": "#/definitions/UpdateSuperAdmin"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Returns the updated SuperAdmin",
+                  "schema": {
+                    "$ref": "#/definitions/SuperAdmin"
+                  }
+                },
+                "400": {
+                  "description": "Error occurred while updating SuperAdmin"
+                }
+              }
+            },
+            "delete": {
+                "tags": ["SuperAdmin"],
+                "summary": "Delete a SuperAdmin by ID",
+                "description": "Deletes a SuperAdmin with the specified ID.",
+                "parameters": [
+                  {
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "description": "The ID of the SuperAdmin to delete.",
+                    "schema": {
+                      "type": "string",
+                      "format": "uuid"
+                    }
+                  }
+                ],
+                "responses": {
+                  "200": {
+                    "description": "SuperAdmin deleted successfully"
+                  },
+                  "400": {
+                    "description": "Bad Request - Invalid ID provided"
+                  },
+                  "404": {
+                    "description": "SuperAdmin not found"
+                  },
+                  "500": {
+                    "description": "Internal Server Error"
+                  }
+                }
+              }
+        },
+        "/superadmin/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Authenticate a Super Admin",
+                "description": "Authenticate a Super Admin by email and password",
+                "parameters": [
+                    {
+                        "name": "finance",
+                        "in": "body",
+                        "required": true,
+                        "description": "finance that we want create",
+                        "schema": {
+                            "$ref": "#/definitions/login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful login",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/definitions/LoginResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request: Invalid request body format"
+                    },
+                    "401": {
+                        "description": "Unauthorized: Invalid email or password"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/superadmin/logout": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Logout a Super Admin",
+                "description": "Clears the access token and refresh token cookies for the logged in Super Admin",
+                "responses": {
+                    "200": {
+                        "description": "Successful logout"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/superadmin/alllogout": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Logout a Super Admin",
+                "description": "Clears the access token and refresh token cookies for the logged in Super Admin",
+                "responses": {
+                    "200": {
+                        "description": "Successful logout"
+                    },
+                    "500": {
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+    }  , 
+        "definitions": {
+       
+            "getAllCourses": {
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "courseName": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "fees": {
+                        "type": "string"
+                    },
+                    "duration": {
+                        "type": "string"
+                    },
+                    "school": {
+                        "type": "array",
+                        "items":{
+                            "$ref":"#definitions/getFractionSchool"
+                        }
+                    }
+                }
+            },"create-updateNewCourses":{
+                "properties": {
+                    "courseName": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "fees": {
+                        "type": "string"
+                    },
+                    "duration": {
+                        "type": "string"
+                    },
+                    "school": {
+                        "type": "string"
+                    }
+                }
+            },
+            "getAllSchool": {
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "isActive": {
+                        "type": "boolean"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "schoolName": {
+                        "type": "string"
+                    },
+                    "phoneNo": {
+                        "type": "string"
+                    }
+                }
+            },
+            "getFractionSchool": {
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "schoolName": {
+                        "type": "string"
+                    }
+                }
+            },
+            "getAllFaculty":{
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "isActive": {
+                        "type": "boolean"
+                    },
+                    "fullName": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "school": {
+                        "type": "array",
+                        "items":{
+                            "$ref":"#definitions/getFractionSchool"
+                        }
+                    },
+                    "phoneNo":{
+                        "type": "string"
+                    }
+                }
+            },
+            "create-updateNewFaculty":{
+                "properties": {
+                    "isActive": {
+                        "type": "boolean"
+                    },
+                    "fullName": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "school": {
+                        "type": "string"
+                    },
+                    "phoneNo":{
+                        "type": "string"
+                    }
+                }
+            },
+            "getAllFinance":{
+                "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "school": {
+                    "type": "array",
+                    "items":{
+                        "$ref":"#definitions/getFractionSchool"
+                    }
+                },
+                "email": {
+                    "type": "string"
+                },
+                "isActive": {
+                    "type": "boolean"
+                }
+            }
+            },
+            "create-updateNewFinance":{
+            "properties": {
+                "school": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "isActive": {
+                    "type": "boolean"
+                }
+        }
+        
+            },
+            "getAllInquiry":{
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "school": {
+                        "type": "array",
+                        "items":{
+                            "$ref":"#definitions/getFractionSchool"
+                        }
+                    },
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "email":{
+                        "type":"string"
+                    },
+                    "subject": {
+                        "type": "string"
+                    },
+                    "message":{
+                        "type":"string"
+                    }
+                }
+            },
+            "create-updateNewInquiry":{
+                "properties": {
+                    "school": {
+                        "type":"string"
+                    },
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "email":{
+                        "type":"string"
+                    },
+                    "subject": {
+                        "type": "string"
+                    },
+                    "message":{
+                        "type":"string"
+                    }
+                }
+            },
+            "create-updateNewMarketing":{
+                "properties": {
+                    "school": {
+                        "type": "string"
+                    },
+                    "isActive": {
+                        "type": "boolean"
+                    },
+                    "email":{
+                        "type":"string"
+                    }
+                }
+            },
+            "getAllMarketing":{
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "school": {
+                        "type": "array",
+                        "items":{
+                            "$ref":"#definitions/getFractionSchool"
+                        }
+                    },
+                    "isActive": {
+                        "type": "boolean"
+                    },
+                    "email":{
+                        "type":"string"
+                    }
+                }
+            },
+            "create-updateNewSchool":{
+                "properties": {
+                    "isActive": {
+                        "type": "boolean"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "schoolName": {
+                        "type": "string"
+                    },
+                    "phoneNo": {
+                        "type": "string"
+                    }
+                }
+            },
+            "getAllSeminar":{
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "presenter": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "link":{
+                        "type":"string"
+                    },
+                    "dateTime": {
+                        "type": "string"
+                    }
+                }
+            },
+            "create-updateNewSeminar":{
+                "properties": {
+                    "presenter": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "link":{
+                        "type":"string"
+                    },
+                    "dateTime": {
+                        "type": "string"
+                    }
+                }
+            },
+            "getAllStudent":{
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "school": {
+                        "type": "array",
+                        "items":{
+                            "$ref":"#definitions/getFractionSchool"
+                        }
+                    },
+                    "faculty":{
+                        "type": "array",
+                        "items":{
+                            "$ref":"#definitions/getFractionFaculty"
+                        }
+                    },
+                    "isActive": {
+                        "type": "boolean"
+                    },
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "middleName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "email":{
+                        "type":"string"
+                    },
+                    "age": {
+                        "type": "string"
+                    },
+                    "gender":{
+                        "type":"string"
+                    }
+                }
+            },
+            "create-updateNewStudent":{
+                "properties": {
+                   
+                    "school": {
+                        "type": "string"
+                    },
+                    "faculty":{
+                        "type": "string"
+                    },
+                    "isActive": {
+                        "type": "boolean"
+                    },
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "middleName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "email":{
+                        "type":"string"
+                    },
+                    "age": {
+                        "type": "string"
+                    },
+                    "gender":{
+                        "type":"string"
+                    }
+                }
+            },
+            "getFractionFaculty":{
+                "properties": {
+                    "_id": {
+                        "type": "string"
+                    },
+                    "fullName": {
+                        "type": "string"
+                    }
+                }
+            },
+            "login":{
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "SuperAdminLogin": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "format": "email",
+                        "description": "The email of the Super Admin",
+                        "example": "jane.doe@example.com"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "The password of the Super Admin",
+                        "example": "password123"
+                    }
+                }
+            },
+            "LoginResponse": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "description": "A success message indicating the login was successful",
+                        "example": "Login successful"
+                    }
+                }
+            },"NewSuperAdmin":{
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    }
+                }
+            }
+    },"withCredentials": true
+}
