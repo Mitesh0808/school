@@ -22,11 +22,11 @@ npm install
 Create an .env file in the root directory and set the following variables:
 makefile
 Copy code
-MONGODB_URI=<your-mongodb-connection-string>
+```MONGODB_URI=<your-mongodb-connection-string>
 ACCESS_TOKEN=<your-access-token>
 REFRESH_TOKEN=<your-refresh-token>
 MAIL_ID=<your-mail-id>
-MAIL_PASSWORD=<your-mail-password>
+MAIL_PASSWORD=<your-mail-password>```
 
 Run the following command to start the server:
 npm start
