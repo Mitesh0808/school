@@ -6,8 +6,10 @@ const {
   courseUpdateValidator,
 } = require("../validation/courseValidator");
 const { idValidator } = require("../validation");
+
 const getAllCourses = asyncHandler(async (req, res) => {
   console.log(req.headers);
+
   try {
     // const cources = await Course.find({});
     const cources = await Course.aggregate([
