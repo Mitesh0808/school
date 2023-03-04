@@ -21,13 +21,6 @@ Copy code
 npm install
 Create an .env file in the root directory and set the following variables:
 makefile
-Copy code
-```MONGODB_URI=<your-mongodb-connection-string>
-ACCESS_TOKEN=<your-access-token>
-REFRESH_TOKEN=<your-refresh-token>
-MAIL_ID=<your-mail-id>
-MAIL_PASSWORD=<your-mail-password>```
-
 Run the following command to start the server:
 npm start
 Open your web browser and navigate to http://localhost:5000/ to access the API.
@@ -35,6 +28,14 @@ To view the Swagger UI documentation, navigate to http://localhost:5000/api-docs
 
 
 Note: Replace your-mongodb-connection-string, your-access-token, your-refresh-token, your-mail-id, and your-mail-password with the appropriate values in the .env file.
+Copy code
+```MONGODB_URI=<your-mongodb-connection-string>
+ACCESS_TOKEN=<your-access-token>
+REFRESH_TOKEN=<your-refresh-token>
+MAIL_ID=<your-mail-id>
+MAIL_PASSWORD=<your-mail-password>```
+
+
 
 
 
